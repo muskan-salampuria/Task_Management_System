@@ -9,9 +9,12 @@ import com.epam.taskManagement.models.Note;
 
 public interface NoteService {
 
-	public abstract String addNotes(int taskID, String note) throws TaskIDNotFoundException ;
-	public abstract List<Note> printNotes() throws EmptyListException ;
-	public abstract String modifyNote(int noteID, String noteInput) throws NoteIDNotFoundException ;
-	public abstract String deleteNote(int noteID) throws NoteIDNotFoundException ;
-	
+	public abstract Note addNotes(int taskID, String note) throws TaskIDNotFoundException;
+
+	public abstract List<Note> printNotes() throws EmptyListException;
+
+	public abstract int modifyNote(int noteID, String noteInput) throws NoteIDNotFoundException;
+
+	public abstract int deleteNote(int noteID) throws NoteIDNotFoundException;
+
 }

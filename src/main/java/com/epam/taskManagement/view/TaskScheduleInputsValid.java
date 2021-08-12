@@ -11,33 +11,33 @@ import org.springframework.stereotype.Component;
 import com.epam.taskManagement.exception.StatusFormatException;
 import com.epam.taskManagement.utils.Constants;
 import com.epam.taskManagement.utils.Validations;
+
 @Component
 public class TaskScheduleInputsValid {
 
-	private static final Logger LOGGER= LogManager.getLogger(TaskScheduleInputsValid.class);
-	
+	private static final Logger LOGGER = LogManager.getLogger(TaskScheduleInputsValid.class);
+
 	Scanner scan = new Scanner(System.in);
 	Scanner scanLine = new Scanner(System.in);
-	
+
 	@Autowired
 	Validations valid;
 
 	public String titleInput() {
-		String title="";
-		while(true) {
-		try {
-			LOGGER.info("Enter Title : ");
-			title=scanLine.nextLine();
-			if(title!="")
-				break;
-			else
-				throw new NullPointerException("Title can not be NULL");
+		String title = "";
+		while (true) {
+			try {
+				LOGGER.info("Enter Title : ");
+				title = scanLine.nextLine();
+				if (title != "")
+					break;
+				else
+					throw new NullPointerException("Title can not be NULL");
+			} catch (NullPointerException e) {
+				LOGGER.error(e.getMessage());
+			}
 		}
-		catch(NullPointerException e) {
-			LOGGER.error(e.getMessage());
-		}
-		}
-		return(title);
+		return (title);
 	}
 
 	public LocalDateTime startTimeInput() {
@@ -55,7 +55,7 @@ public class TaskScheduleInputsValid {
 		return startTime;
 	}
 
-	//Overload
+	// Overload
 	public LocalDateTime startTimeInput(LocalDateTime endTime) {
 		boolean flag = true;
 		LocalDateTime startTime = LocalDateTime.now();
@@ -64,8 +64,7 @@ public class TaskScheduleInputsValid {
 				LOGGER.info(Constants.ENTER_START_DATE_TIME);
 				startTime = valid.startDateValid(scan.nextLine(), endTime);
 				flag = false;
-			} 
-			catch (Exception e) {
+			} catch (Exception e) {
 				LOGGER.error(Constants.RE_ENTER_THE_DATA);
 			}
 		}
@@ -80,8 +79,7 @@ public class TaskScheduleInputsValid {
 				LOGGER.info(Constants.ENTER_END_DATE_TIME);
 				endTime = valid.endDateValid(startTime, scan.nextLine());
 				flag = false;
-			} 
-			catch (Exception e) {
+			} catch (Exception e) {
 				LOGGER.error(Constants.RE_ENTER_THE_DATA);
 			}
 		}
@@ -140,13 +138,13 @@ public class TaskScheduleInputsValid {
 
 	public int taskIDInput() {
 		boolean flag = true;
-		int taskId=0;
+		int taskId = 0;
 		while (flag) {
 			LOGGER.info("Enter Task ID : ");
 			try {
 				taskId = Integer.parseInt(scan.next());
-				flag=false;
-			}catch(NumberFormatException ndException) {
+				flag = false;
+			} catch (NumberFormatException ndException) {
 				LOGGER.error(Constants.RE_ENTER_THE_DATA);
 			}
 		}
@@ -155,17 +153,16 @@ public class TaskScheduleInputsValid {
 
 	public int noteIDInput() {
 		boolean flag = true;
-		int noteId=0;
+		int noteId = 0;
 		while (flag) {
 			LOGGER.info("Enter Note ID : ");
 			try {
 				noteId = Integer.parseInt(scan.next());
-				flag=false;
-			}catch(NumberFormatException ndException) {
+				flag = false;
+			} catch (NumberFormatException ndException) {
 				LOGGER.error(Constants.RE_ENTER_THE_DATA);
 			}
 		}
 		return noteId;
 	}
 }
-

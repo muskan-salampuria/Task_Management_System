@@ -14,19 +14,21 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Tasks")
+@Table(name = "Tasks")
 public class Task {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="task_Id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "task_Id")
 	private int taskId;
-	@Column(name="task_Title")
+	@Column(name = "task_Title")
 	private String taskTitle;
+	@Column(name = "start_time")
 	private LocalDateTime startTime;
+	@Column(name = "end_time")
 	private LocalDateTime endTime;
 	private String status;
-	
-	@OneToMany(mappedBy="task", fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+
+	@OneToMany(mappedBy = "task", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Note> noteList;
 
 	public void setNoteList(List<Note> notes) {

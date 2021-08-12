@@ -21,18 +21,25 @@ public class Constants {
 	public static final String ENTER_END_DATE_TIME = "Enter End DateTime (dd/MM/yyyy HH:mm:ss) : ";
 	public static final String ENTER_START_DATE_TIME = "Enter Start Date Time (dd/MM/yyyy HH:mm:ss) : ";
 	public static final String ENTER_THE_STATUS_COMPLETED_PENDING = "Enter the status (Completed/Pending) : ";
-	public static final String CHOICE_MENU = "*****************************************************\nSelect Operation : " + "\n1. Create New Task" + "\n2. List All Tasks"+ "\n3. Modify Task by TaskID" + "\n4. Delete Task by TaskID" + "\n5. Read Task by TaskID" + "\n6. Add Notes by TaskID" + "\n7. Print Notes" + "\n8. Update Notes by NoteID" + "\n9. Delete Notes by NoteID"+"\n10.EXIT \n*****************************************************";
+	public static final String CHOICE_MENU = "*****************************************************\nSelect Operation : "
+			+ "\n1. Create New Task" + "\n2. List All Tasks" + "\n3. Modify Task by TaskID"
+			+ "\n4. Delete Task by TaskID" + "\n5. Read Task by TaskID" + "\n6. Add Notes by TaskID"
+			+ "\n7. Print Notes" + "\n8. Update Notes by NoteID" + "\n9. Delete Notes by NoteID"
+			+ "\n10.EXIT \n*****************************************************";
 	public static final String MODIFY_CHOICE_OPTIONS = "****************************\nChoose which one to modify : \n1.Title \n2.Start Time \n3.End Time \n4.Status \n5.BACK \n****************************";
 	public static final String TASK_LIST = "------------------------------------------------------------ TASK LIST ------------------------------------------------------";
 	public static final String ENTER_NOTE = "Enter Note:";
 	public static final String NOTE_ADDED = "Note Added";
 	public static final String RE_ENTER_YOUR_CHOICE = "Re Enter your choice";
-	public static final String NOTES_TABLE_HEADING = String.format("%10s | %20s | %10s ", "Note ID", "Notes", "Task ID");
+	public static final String NOTES_TABLE_HEADING = String.format("%10s | %20s | %10s ", "Note ID", "Notes",
+			"Task ID");
 	public static final String NOTES_LIST = "------------------------------------------------------------ NOTES LIST ------------------------------------------------------";
 	public static final String NO_NOTES = "                                             !!!!!! NO NOTES AVAILABLE !!!!!!!!!                                      ";
-	public static final String TASK_TABLE_HEADING = String.format("%10s | %15s | %20s | %20s | %15s ", "Task ID", "Title", "Start", "End","Status");
+	public static final String TASK_TABLE_HEADING = String.format("%10s | %15s | %20s | %20s | %15s ", "Task ID",
+			"Title", "Start", "End", "Status");
 	public static final String PROGRAM_CLOSED = "!!!!!!!!!!!!!!!  Program Closed  !!!!!!!!!!!!!!!!";
+
 	private Constants() {
-		//private constructor to implicit public one
+		// private constructor to implicit public one
 	}
 }

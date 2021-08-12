@@ -6,14 +6,15 @@ import javax.persistence.Persistence;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-//@Configuration
-public class EntityManagerConnection {	
-	private EntityManagerConnection() {
-		
+import org.springframework.context.annotation.Primary;
+
+@Configuration
+public class EntityManagerConnection {
+
+	@Bean
+	@Primary
+	public EntityManager getEntityManagerConnection() {
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("my-local-mysql");
+		return entityManagerFactory.createEntityManager();
 	}
-//	@Bean
-    public static EntityManager getEntityManagerConnection() {
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("my-local-mysql");
-        return entityManagerFactory.createEntityManager();
-    }
 }
